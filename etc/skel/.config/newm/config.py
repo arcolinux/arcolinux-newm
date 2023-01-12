@@ -194,7 +194,7 @@ term = "xfce4-terminal"
 
 
 def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
-    menu = "~/sh/menu"
+    menu = "~/.config/newm/scripts/menu"
     clipboard = "~/.config/rofi/bin/clipboard"
     favorites = "~/.config/rofi/bin/apps"
     powermenu = "~/.config/rofi/bin/menu_powermenu"

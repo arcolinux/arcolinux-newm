@@ -206,6 +206,8 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
     return [
         (super + shift + "Return", lambda: os.system("thunar &")),
         (super + "x", lambda: os.system("archlinux-logout &")),
+        (super + "Return", lambda: os.system(f"{term} &")),
+        (ctrl + alt + "Return", lambda: os.system(f"{term} &")),        
         (super + "h", lambda: layout.move(-1, 0)),
         (super + "j", lambda: layout.move(0, 1)),
         (super + "k", lambda: layout.move(0, -1)),
@@ -237,7 +239,6 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("XF86AudioPrev", lambda: os.system("playerctl previous")),
         ("XF86AudioNext", lambda: os.system("playerctl next")),
         ("XF86AudioPlay", lambda: os.system("playerctl play-pause &")),
-        (super + "Return", lambda: os.system(f"{term} &")),
         (altgr + "e", lambda: os.system(f"{powermenu} &")),
         ("XF86Copy", lambda: os.system(f"{clipboard} &")),
         ("XF86Favorites", lambda: os.system(f"{bookmarks} &")),

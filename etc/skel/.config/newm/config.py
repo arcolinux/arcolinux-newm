@@ -285,12 +285,6 @@ gestures = {
 swipe = {"gesture_factor": 3}
 
 panels = {
-    "lock": {
-        "cmd": f"{term} newm-panel-basic lock",
-        "w": 0.7,
-        "h": 0.7,
-        "corner_radius": 0,
-    },
     "bar": {
         "cmd": "~/.config/newm/scripts/statusbar",
         "visible_normal": True,

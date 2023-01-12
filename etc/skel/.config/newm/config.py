@@ -292,7 +292,7 @@ panels = {
         "corner_radius": 0,
     },
     "bar": {
-        "cmd": "waybar --config ~/.config/newm/waybar/config",
+        "cmd": "~/.config/newm/scripts/statusbar",
         "visible_normal": True,
         "visible_fullscreen": False,
     },

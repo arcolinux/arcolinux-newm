@@ -29,7 +29,7 @@ def set_value(keyval, file):
     return f"sed -i 's/^{var}\\=.*/{var}={val}/' {file}"
 
 def on_startup( ):
-    os.system("~/.config/newm/scripts/telegram")
+    # os.system("~/.config/newm/scripts/telegram")
     # "hash dbus-update-activation-environment 2>/dev/null && \
     # dbus-update-activation-environment --systemd --all",
 
@@ -51,10 +51,10 @@ def on_reconfigure():
     gnome_peripheral = "org.gnome.desktop.peripherals"
     gnome_preferences = "org.gnome.desktop.wm.preferences"
     # easyeffects = "com.github.wwmm.easyeffects"
-    theme = "SAGA-HOTPINK"
-    icons = "candy-icons"
-    cursor = "Sweet-cursors"
-    font = "Lucida MAC 10"
+    theme = "Arc-Dark"
+    icons = "Surfn-Arc"
+    cursor = "Bibata-Modern-Ice"
+    font = "Noto Sans 11"
     gtk2 = "~/.gtkrc-2.0"
     gtk3 = "~/.config/gtk-3.0/settings.ini"
 
@@ -99,11 +99,11 @@ outputs = [
 
 pywm = {
     "xkb_model": "PLACEHOLDER_xkb_model",
-    "xkb_layout": "latam",
+    "xkb_layout": "be",
     # "xkb_options": "caps:swapescape",
     "focus_follows_mouse": True,
-    "xcursor_theme": "Sweet-cursors",
-    "xcursor_size": 20,
+    "xcursor_theme": "Bibata-Modern-Ice",
+    "xcursor_size": 24,
     "encourage_csd": False,
     "enable_xwayland": True,
     "natural_scroll": False,
@@ -163,7 +163,7 @@ alt = "A-"
 shift="S-"
 
 background = {
-    "path": os.environ["HOME"] + f"/Imágenes/wallpapers_collection/1975_keyboard/62217-gettyimages-1090425272.jpg",
+    "path": "/usr/share/backgrounds/arcolinux/arco-wallpaper.jpg",
     # "path": os.environ["HOME"]
     # + f"/Imágenes/wallpaperCicle/waves/{randrange(1, 3)}.png",
     # "path": os.environ["HOME"] + "/Imágenes/wallpaperCicle/cat-sound.png",
@@ -292,7 +292,7 @@ panels = {
         "corner_radius": 0,
     },
     "bar": {
-        "cmd": "waybar",
+        "cmd": "waybar --config ~/.config/newm/waybar/config",
         "visible_normal": True,
         "visible_fullscreen": False,
     },

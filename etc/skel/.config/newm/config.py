@@ -125,7 +125,7 @@ def rules(view):
         "galculator"
     )
     #float_titles = ("Exportar la imagen", "Dialect")
-    blur_apps = ("kitty", "rofi", "waybar", "Alacritty","Code","Xfce4-terminal","xfce4-terminal","thunar","Spotify","ClipGrab","vlc","org.telegram.desktop","galculator")
+    blur_apps = ("kitty", "rofi", "waybar", "Alacritty","Code","Xfce4-terminal","xfce4-terminal","termite")
     role = ("clipgrab","rofi","galculator")
     app_rule = None
     # Set float common rules
@@ -204,6 +204,8 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
     wifi = "~/.config/rofi/bin/wifi"
 
     return [
+        (super + shift + "Return", lambda: os.system("thunar &")),
+        (super + "x", lambda: os.system("archlinux-logout &")),
         (super + "h", lambda: layout.move(-1, 0)),
         (super + "j", lambda: layout.move(0, 1)),
         (super + "k", lambda: layout.move(0, -1)),
@@ -225,7 +227,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         (super + "n", lambda: layout.basic_scale(-1)),
         (super + "s", layout.toggle_fullscreen),
         (super + "p", lambda: layout.ensure_locked(dim=True)),
-        #(super + "P", layout.terminate),
+        (super + "P", layout.terminate),
         (super + "q", layout.close_view),
         (super + shift + "q", layout.close_view),
         (super + shift + "r", layout.update_config),
@@ -274,7 +276,6 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("XF86Go", lambda: os.system(f"{wifi} &")),
         ("XF86Bluetooth", lambda: os.system("blueman-manager &")),
         ("XF86AudioPreset", lambda: os.system("pavucontrol &")),
-        (super + "t", lambda: os.system("thunar &")),
     ]
 
 

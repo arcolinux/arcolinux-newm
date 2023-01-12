@@ -41,7 +41,8 @@ def on_startup( ):
         "wl-paste -t text -n --watch clipman store",
         "wlsunset -l 16.0867 -L -93.7561 -t 2500 -T 6000",
         "nm-applet --indicator",
-        "fnott"
+        "fnott",
+        "~/.config/newm/scripts/statusbar"
     )
     execute(INIT_SERVICE)
 
@@ -140,7 +141,7 @@ def rules(view):
 
 
 view = {
-    "padding": 10,
+    "padding": 5,
     "fullscreen_padding": 0,
     "send_fullscreen": False,
     "rules": rules,
@@ -224,8 +225,9 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         (super + "n", lambda: layout.basic_scale(-1)),
         (super + "s", layout.toggle_fullscreen),
         (super + "p", lambda: layout.ensure_locked(dim=True)),
-        (super + "P", layout.terminate),
-        (super + "c", layout.close_view),
+        #(super + "P", layout.terminate),
+        (super + "q", layout.close_view),
+        (super + shift + "q", layout.close_view),
         (super + shift + "r", layout.update_config),
         (super, lambda: layout.toggle_overview(only_active_workspace=True)),
         (altgr + "z", layout.swallow_focused_view),
@@ -284,13 +286,13 @@ gestures = {
 
 swipe = {"gesture_factor": 3}
 
-panels = {
-    "bar": {
-        "cmd": "~/.config/newm/scripts/statusbar",
-        "visible_normal": True,
-        "visible_fullscreen": False,
-    },
-}
+# panels = {
+#     "bar": {
+#         "cmd": "waybar",
+#         "visible_normal": True,
+#         "visible_fullscreen": False,
+#     },
+# }
 
 grid = {"throw_ps": [2, 10]}
 

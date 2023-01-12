@@ -227,7 +227,7 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         (super + "u", lambda: layout.basic_scale(1)),
         (super + "n", lambda: layout.basic_scale(-1)),
         (super + "s", layout.toggle_fullscreen),
-        (super + "p", lambda: layout.ensure_locked(dim=True)),
+        #(super + "p", lambda: layout.ensure_locked(dim=True)),
         (super + "P", layout.terminate),
         (super + "q", layout.close_view),
         (super + shift + "q", layout.close_view),

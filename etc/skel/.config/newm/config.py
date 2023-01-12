@@ -143,7 +143,7 @@ def rules(view):
 view = {
     "padding": 5,
     "fullscreen_padding": 0,
-    "send_fullscreen": False,
+    "send_fullscreen": True,
     "rules": rules,
     "floating_min_size": False,
     "debug_scaling": False,
@@ -165,9 +165,7 @@ shift="S-"
 
 background = {
     "path": "/usr/share/backgrounds/arcolinux/arco-wallpaper.jpg",
-    # "path": os.environ["HOME"]
-    # + f"/Imágenes/wallpaperCicle/waves/{randrange(1, 3)}.png",
-    # "path": os.environ["HOME"] + "/Imágenes/wallpaperCicle/cat-sound.png",
+    # "path": os.environ["HOME"] + "/Pictures/test.png",
     "time_scale": 0.125,
     "anim": True,
 }
@@ -196,6 +194,7 @@ term = "xfce4-terminal"
 
 def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
     menu = "~/.config/newm/scripts/menu"
+    fullmenu = "~/.config/newm/scripts/fullmenu"
     clipboard = "~/.config/rofi/bin/clipboard"
     favorites = "~/.config/rofi/bin/apps"
     powermenu = "~/.config/rofi/bin/menu_powermenu"
@@ -266,8 +265,8 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
             "XF86Tools",
             lambda: os.system("kitty nvim ~/.config/newm/config.py &"),
         ),
-        (super + "r", lambda: os.system(f"{menu}&")),
-        #("XF86Explorer", lambda: os.system(f"{menu} &")),
+        (super + "d", lambda: os.system(f"{menu}&")),
+        (super + shift + "d", lambda: os.system(f"{fullmenu}&")),
         ("XF86LaunchA", lambda: os.system(f"{favorites} &")),
         ("Print", lambda: os.system('grim ~/screen-"$(date +%s)".png &')),
         (

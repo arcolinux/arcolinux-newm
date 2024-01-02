@@ -3,9 +3,9 @@
 
 ## Export Environment Variables and Start Newm
 export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=newm
-export XDG_CURRENT_DESKTOP=newm
-export XDG_CURRENT_SESSION=newm
+export XDG_SESSION_DESKTOP=wlroots
+export XDG_CURRENT_DESKTOP=wlroots
+export XDG_CURRENT_SESSION=wlroots
 
 
 # Ubuntu Sway specific config dir
@@ -87,4 +87,4 @@ XCURSOR_SIZE=24
 
 ## Start Newm
 sleep 0.5;
-newm
+start-newm -d

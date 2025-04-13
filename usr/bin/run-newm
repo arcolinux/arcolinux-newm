@@ -14,6 +14,7 @@ export XDG_CONFIG_DIRS=/etc/xdg
 # Force Wayland for Mozilla Firefox
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DBUS_REMOTE=1
+export MOZ_WAYLAND_DRM_DEVICE=/dev/dri/renderD128
 
 ## Qt environment
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -84,6 +85,9 @@ fi
 
 ## set default cursor size
 XCURSOR_SIZE=24
+
+## save timezone for waybar usage
+export TZ=$(cat /etc/timezone)
 
 ## Start Newm
 sleep 0.5;
